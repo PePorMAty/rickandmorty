@@ -24,10 +24,7 @@ const Videos = () => {
 
   useEffect(() => {
     dispatch(selectSeason(season));
-    if (!localStorage.getItem("season")) {
-      localStorage.setItem("season", "1 season");
-      localStorage.setItem("page", "videos");
-    }
+
     localStorage.getItem("season");
   }, [dispatch, season]);
 
@@ -44,7 +41,7 @@ const Videos = () => {
       <div className="grid grid-cols-4 gap-8">
         {currentSeason.map((elem) => (
           <Link
-            to={`/video/${elem.id}`}
+            to={`/rickandmorty/video/${elem.id}`}
             className="cursor-pointer mb-4 hover:opacity-80"
             key={elem.id}
             onClick={() => dispatch(getVideo(elem.id))}

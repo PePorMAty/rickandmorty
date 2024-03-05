@@ -69,7 +69,7 @@ const Characters = () => {
         {filteredCharacters.length !== 0 ? (
           filteredCharacters.map((elem) => (
             <Link
-              to={`/character/${elem.id}`}
+              to={`/rickandmorty/character/${elem.id}`}
               className="cursor-pointer hover:opacity-80"
               key={elem.id}
               onClick={() => dispatch(getCharacter(elem.id))}

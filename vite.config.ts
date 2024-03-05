@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import type { UserConfig as VitestUserConfigInterface } from "vitest/config";
 
 const vitestConfig: VitestUserConfigInterface = {
-  base: "/rickandmorty/",
   test: {
     globals: true,
     environment: "jsdom",
@@ -13,6 +12,7 @@ const vitestConfig: VitestUserConfigInterface = {
 };
 
 export default defineConfig({
+  base: "/rickandmorty/",
   plugins: [react()],
   test: vitestConfig.test,
 });

@@ -9,12 +9,12 @@ import NotFound from "./NotFound";
 const Routing = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/video/:id" element={<SingleVideo />} />
-      <Route path="/character/:id" element={<SingleCharacter />} />
-      <Route path="/location/:id" element={<SingleLocation />} />
-      <Route path="/search/:value" element={<SearchPage />} />
-      <Route path="/search/" element={<NotFound />} />
+      <Route path="/rickandmorty/" element={<Home />} />
+      <Route path="/rickandmorty/video/:id" element={<SingleVideo />} />
+      <Route path="/rickandmorty/character/:id" element={<SingleCharacter />} />
+      <Route path="/rickandmorty/location/:id" element={<SingleLocation />} />
+      <Route path="/rickandmorty/search/:value" element={<SearchPage />} />
+      <Route path="/rickandmorty/search/" element={<NotFound />} />
     </Routes>
   );
 };

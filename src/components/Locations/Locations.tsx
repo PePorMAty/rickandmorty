@@ -39,7 +39,7 @@ const Locations = () => {
       <div className="grid grid-cols-5 gap-8">
         {filteredLocations.map((elem) => (
           <Link
-            to={`/location/${elem.id}`}
+            to={`/rickandmorty/location/${elem.id}`}
             className="cursor-pointer mb-4 hover:opacity-80"
             key={elem.id}
             onClick={() => dispatch(getLocation(elem.id))}

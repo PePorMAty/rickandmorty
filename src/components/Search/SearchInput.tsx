@@ -27,7 +27,7 @@ const SearchInput = () => {
   };
 
   if (submit) {
-    return <Navigate to={`/search/${value}`} />;
+    return <Navigate to={`/rickandmorty/search/${value}`} />;
   }
 
   return (
@@ -46,7 +46,7 @@ const SearchInput = () => {
         </form>
       </div>
       <Link
-        to={`/search/${value}`}
+        to={`/rickandmorty/search/${value}`}
         className="absolute mb-1 flex flex-col justify-center right-80 top-10 after:content-[''] after:absolute after:right-8 after:bg-lime-500 after:w-0.5 after:h-9"
       >
         <FaSearch />

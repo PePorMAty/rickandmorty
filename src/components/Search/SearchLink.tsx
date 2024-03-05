@@ -11,7 +11,7 @@ const SearchLink = ({ filteredArray, handleClick, title }: Props) => {
     <>
       {filteredArray.map((elem) => (
         <Link
-          to={`/${title}/${elem.id}`}
+          to={`/rickandmorty/${title}/${elem.id}`}
           className="cursor-pointer mb-4 hover:opacity-80"
           key={elem.id}
           onClick={() => handleClick(elem.id)}

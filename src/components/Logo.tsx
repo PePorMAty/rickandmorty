@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 
 const Logo = () => {
   return (
-    <Link to="/">
+    <Link to="/rickandmorty/">
       <img className="w-60 h-15" src={logo} alt="logo" />
     </Link>
   );

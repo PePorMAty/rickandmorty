@@ -3,7 +3,7 @@ import { IIinitialStateVideo } from "../../types";
 import { initialVideoData } from "../../stubData/videosData";
 
 const initialState: IIinitialStateVideo = {
-  isActive: true,
+  isActive: false,
   filteredVideo: [],
   data: initialVideoData,
 };
