@@ -5,7 +5,9 @@ import { getVideo, selectSeason } from "../../store/slices/videosSlice";
 import Select from "../Select";
 
 const Videos = () => {
-  const [season, setSeason] = useState(localStorage.getItem("season") ?? "1");
+  const [season, setSeason] = useState(
+    localStorage.getItem("season") || "1 season"
+  );
   const { currentSeason } = useAppSelector((state) => state.videos.data);
   const { video } = useAppSelector((state) => state.videos.data);
 
@@ -22,6 +24,10 @@ const Videos = () => {
 
   useEffect(() => {
     dispatch(selectSeason(season));
+    if (!localStorage.getItem("season")) {
+      localStorage.setItem("season", "1 season");
+      localStorage.setItem("page", "videos");
+    }
     localStorage.getItem("season");
   }, [dispatch, season]);
 
