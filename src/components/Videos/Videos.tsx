@@ -8,6 +8,8 @@ const Videos = () => {
   const [season, setSeason] = useState(
     localStorage.getItem("season") || "1 season"
   );
+  const [currSeason, setCurrSeason] = useState(season);
+
   const { currentSeason } = useAppSelector((state) => state.videos.data);
   const { video } = useAppSelector((state) => state.videos.data);
 
@@ -19,12 +21,13 @@ const Videos = () => {
 
   const handleChangeSelect = (value: string) => {
     localStorage.setItem("season", value);
+    localStorage.setItem("currentSeason", value);
+    setCurrSeason(value);
     setSeason(value);
   };
 
   useEffect(() => {
     dispatch(selectSeason(season));
-
     localStorage.getItem("season");
   }, [dispatch, season]);
 
@@ -36,6 +39,7 @@ const Videos = () => {
           handleChange={handleChangeSelect}
           title={"season"}
           array={filteredSeason}
+          currentSymbol={currSeason}
         />
       </div>
       <div className="grid grid-cols-4 gap-8">

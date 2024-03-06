@@ -12,6 +12,7 @@ const Locations = () => {
   const { filteredLocations } = useAppSelector((state) => state.locations);
 
   const [type, setType] = useState(localStorage.getItem("type") ?? "");
+  const [currentType, setCurrentType] = useState(type);
 
   const dispatch = useAppDispatch();
 
@@ -21,6 +22,8 @@ const Locations = () => {
 
   const handleChangeType = (value: string) => {
     setType(value);
+    setCurrentType(value);
+    localStorage.setItem("currentType", value);
     localStorage.setItem("type", value);
   };
 
@@ -35,6 +38,7 @@ const Locations = () => {
         handleChange={handleChangeType}
         title="type"
         array={filteredTypes}
+        currentSymbol={currentType}
       />
       <div className="grid grid-cols-5 gap-8">
         {filteredLocations.map((elem) => (

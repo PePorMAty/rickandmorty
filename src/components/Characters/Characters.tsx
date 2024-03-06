@@ -25,18 +25,28 @@ const Characters = () => {
     return acc.includes(item.gender) ? acc : [...acc, item.gender];
   }, []);
 
+  const [currentStatus, setCurrentStatus] = useState(status);
+  const [currentSpecies, setCurrentSpecies] = useState(species);
+  const [currentGender, setCurrentGender] = useState(gender);
+
   const dispatch = useAppDispatch();
 
   const handleSelectStatus = (value: string) => {
     setStatus(value);
+    setCurrentStatus(value);
+    localStorage.setItem("currentStatus", value);
     localStorage.setItem("status", value);
   };
   const handleSelectSpecies = (value: string) => {
     setSpecies(value);
+    setCurrentSpecies(value);
+    localStorage.setItem("currentSpecies", value);
     localStorage.setItem("species", value);
   };
   const handleSelectGender = (value: string) => {
     setGender(value);
+    setCurrentGender(value);
+    localStorage.setItem("currentGender", value);
     localStorage.setItem("gender", value);
   };
 
@@ -53,16 +63,19 @@ const Characters = () => {
         handleChange={handleSelectStatus}
         title="status"
         array={filteredStatus}
+        currentSymbol={currentStatus}
       />
       <Select
         handleChange={handleSelectSpecies}
         title="species"
         array={filteredSpecies}
+        currentSymbol={currentSpecies}
       />
       <Select
         handleChange={handleSelectGender}
         title="gender"
         array={filteredGender}
+        currentSymbol={currentGender}
       />
 
       <div className="grid grid-cols-5 gap-8">
